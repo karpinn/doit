@@ -25,24 +25,21 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, sans-serif; -webkit-tap-highlight-color: transparent; }
-/* align-items를 center로 변경하여 PC에서 중앙 정렬 및 높이 고정되도록 수정 */
-body { background: #E5E7EB; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+body { background: #E5E7EB; display: flex; justify-content: center; align-items: center; min-height: 100dvh; margin: 0; }
 
-/* 모바일 웹앱 기본 컨테이너 */
 #app-container {
-  width: 100%; max-width: 420px; height: 100vh; background: #fff;
+  width: 100%; max-width: 420px; height: 100dvh; background: #fff;
   position: relative; overflow: hidden; display: flex; flex-direction: column;
   box-shadow: 0 0 40px rgba(0,0,0,0.08); margin: 0 auto;
 }
 
-/* PC 화면 (넓은 모니터) 전용 반응형 레이아웃 */
 @media (min-width: 480px) {
   #app-container {
-    height: 90vh; /* 화면의 90%만 차지 */
-    max-height: 896px; /* 실제 스마트폰 최대 비율 정도로 높이 고정 */
-    border-radius: 32px; /* 세련된 둥근 모서리 */
-    border: 1px solid var(--gray-200); /* 얇고 깔끔한 테두리 */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1); /* 떠있는 듯한 그림자 효과 */
+    height: 90dvh; 
+    max-height: 896px; 
+    border-radius: 32px; 
+    border: 1px solid var(--gray-200); 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
   }
 }
 
@@ -87,11 +84,10 @@ body { background: #E5E7EB; display: flex; justify-content: center; align-items:
 .pfill { height: 100%; background: var(--primary); border-radius: 10px; transition: width 0.4s ease; }
 
 .badge-light { background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+.badge-affiliate { background: var(--pink-500); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-left: 4px; vertical-align: text-bottom; display: inline-block; }
 
-/* 프로필 캐릭터 (아바타) */
 .av { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; background-color: var(--primary-light); background-image: url('https://i.ibb.co/sTmZ4Kb/Kakao-Talk-20260527-141006708-01.png'); background-size: cover; background-position: center; border: 1.5px solid var(--gray-200); color: transparent; }
 
-/* 세부목표 카드 UI 복구 (S3) */
 .sub-goal { background: #fff; border-radius: 16px; border: 1px solid var(--gray-200); padding: 16px; margin-bottom: 10px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; transition: 0.2s; }
 .sub-goal.done { border-color: var(--primary); background: var(--primary-light); }
 .sg-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--gray-300); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; transition: 0.2s; }
@@ -102,20 +98,17 @@ body { background: #E5E7EB; display: flex; justify-content: center; align-items:
 .done .sg-title { color: var(--primary-dark); }
 .sg-desc { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
 
-/* 프로필 신뢰 링 */
 .trust-ring { width: 60px; height: 60px; border-radius: 50%; border: 4px solid var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
 .trust-num { font-size: 18px; font-weight: 700; color: var(--primary); line-height: 1; }
 .trust-lbl { font-size: 10px; color: var(--gray-500); margin-top: 2px; font-weight: 500; }
 
-/* 지도 배경 및 핀-라벨 컨테이너 */
 .map-wrap { position: relative; width: 100%; flex: 1; background-color: #BDE4C8; background-image: linear-gradient(#fff 2px, transparent 2px), linear-gradient(90deg, #fff 2px, transparent 2px); background-size: 100px 100px; overflow: hidden; }
 .map-pin-container { position: absolute; display: flex; flex-direction: column; align-items: center; cursor: pointer; transform: translate(-50%, -100%); z-index: 10; transition: transform 0.1s; }
 .map-pin-container:active { transform: translate(-50%, -100%) scale(0.95); }
 .pin-teardrop { width: 36px; height: 36px; background: var(--primary); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: -2px 2px 6px rgba(0,0,0,0.3); margin-bottom: 4px; }
 .pin-teardrop span { transform: rotate(45deg); font-size: 18px; }
-.pin-title { background: rgba(255,255,255,0.95); padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; color: var(--gray-900); white-space: nowrap; box-shadow: 0 2px 5px rgba(0,0,0,0.15); border: 1px solid var(--gray-200);}
+.pin-title { background: rgba(255,255,255,0.95); padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; color: var(--gray-900); white-space: nowrap; box-shadow: 0 2px 5px rgba(0,0,0,0.15); border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center;}
 
-/* 채팅방 UI */
 .chat-container { flex: 1; overflow-y: auto; background: var(--bg-color); padding: 20px; display: flex; flex-direction: column; }
 .chat-bubble { padding: 12px 16px; border-radius: 16px; font-size: 14px; line-height: 1.5; max-width: 75%; clear: both; }
 .chat-me { background: var(--primary); color: #fff; border-bottom-right-radius: 4px; float: right; margin-bottom: 4px; }
@@ -123,13 +116,8 @@ body { background: #E5E7EB; display: flex; justify-content: center; align-items:
 .chat-time { font-size: 10px; color: var(--gray-400); clear: both; margin-bottom: 8px;}
 .chat-input-area { padding: 12px 16px; background: #fff; border-top: 1px solid var(--gray-200); display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
 
-/* 모달/오버레이 */
 .modal-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 200; display: none; flex-direction: column; justify-content: flex-end; }
-.modal-content { background: #fff; border-radius: 24px 24px 0 0; padding: 20px; height: 80%; display: flex; flex-direction: column; position: relative; }
-
-/* 토스트 알림 */
-#toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 8px; padding: 14px; position: fixed; z-index: 1000; left: 50%; bottom: 80px; transform: translateX(-50%); font-size: 14px; font-weight: 600; opacity: 0; transition: opacity 0.3s, bottom 0.3s; }
-#toast.show { visibility: visible; opacity: 1; bottom: 100px; }
+.modal-content { background: #fff; border-radius: 24px 24px 0 0; padding: 20px; height: 90%; display: flex; flex-direction: column; position: relative; }
 </style>
 </head>
 <body>
@@ -279,12 +267,12 @@ body { background: #E5E7EB; display: flex; justify-content: center; align-items:
           </div>
           <div style="flex:1;">
             <div style="font-size:15px; font-weight:700; color:var(--gray-900);">비슷한 관심사 3명 발견!</div>
-            <div style="font-size:12px; color:var(--gray-500); margin-top:2px;">홍대 근처 · 목표 일치</div>
+            <div style="font-size:12px; color:var(--gray-500); margin-top:2px;">홍대 근처 · 요리 콘텐츠</div>
           </div>
           <span class="badge-light" style="background:#EAF1FF; color:var(--primary-dark);">신규</span>
         </div>
         <div style="font-size:14px; color:var(--gray-700); background:var(--gray-50); border-radius:12px; padding:12px 14px; margin-bottom:14px;">
-          같이 오프라인 모임을 기획해보는 건 어떠세요?
+          같이 파스타 만들어보는 모임은 어떠세요?
         </div>
         <div style="display:flex; gap:8px;">
           <button class="btn-full-o" style="margin:0; padding:12px; flex:1; font-size:14px;" onclick="event.stopPropagation(); navigate('s-neighbors')">목록 보기</button>
@@ -474,7 +462,7 @@ body { background: #E5E7EB; display: flex; justify-content: center; align-items:
         <p style="font-size:13px; color:var(--gray-500); margin-bottom:16px;">위 정보를 바탕으로 함께 기획할 이웃을 초대합니다.</p>
         
         <div class="card" style="display:flex; align-items:center; gap:12px; padding:12px 16px;">
-          <div class="av"></div> 
+          <div class="av" style="background-image:url('https://i.ibb.co/sTmZ4Kb/Kakao-Talk-20260527-141006708-01.png');"></div> 
           <div style="flex:1;">
             <div style="font-size:14px; font-weight:600; color:var(--gray-900);">김민준 <span style="font-size:11px; color:var(--primary); font-weight:500;">92% 일치</span></div>
             <div style="font-size:12px; color:var(--gray-500); margin-top:2px;">신뢰 87</div>
@@ -488,19 +476,74 @@ body { background: #E5E7EB; display: flex; justify-content: center; align-items:
   </div>
 
   <div class="modal-overlay" id="location-modal">
-    <div class="modal-content">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <h2 style="font-size:18px; font-weight:700;">지도에서 장소 선택</h2>
+    <div class="modal-content" style="height: auto; max-height: 80%;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-shrink: 0;">
+        <h2 style="font-size:18px; font-weight:700;">장소 찾기</h2>
         <i class="ti ti-x" style="font-size:24px; cursor:pointer;" onclick="closeLocationModal()"></i>
       </div>
-      <div class="map-wrap" style="border-radius:12px; margin-bottom:16px;">
-        <div class="map-pin-container" style="top:40%; left:30%;" onclick="selectLocation('홍대 공유주방 A호')">
-          <div class="pin-teardrop"><span>🍝</span></div><div class="pin-title">공유주방</div>
+      
+      <div class="input-f" style="display:flex; align-items:center; gap:8px; margin-bottom:12px; flex-shrink: 0;">
+        <i class="ti ti-search" style="color:var(--gray-400); font-size:18px;"></i>
+        <input type="text" placeholder="장소명, 주소 검색" style="border:none; background:transparent; outline:none; flex:1;">
+      </div>
+
+      <div class="map-wrap" style="border-radius:12px; margin-bottom:16px; flex-shrink: 0; min-height: 220px;">
+        <div class="map-pin-container" style="top:40%; left:30%;" onclick="openPlaceDetail('홍대 공유주방 A호', true)">
+          <div class="pin-teardrop"><span>🍝</span></div>
+          <div class="pin-title">공유주방 <span class="badge-affiliate">제휴</span></div>
         </div>
-        <div class="map-pin-container" style="top:60%; left:70%;" onclick="selectLocation('합정 스터디룸')">
-          <div class="pin-teardrop" style="background:var(--gray-800);"><span>📚</span></div><div class="pin-title">스터디룸</div>
+        <div class="map-pin-container" style="top:60%; left:70%;" onclick="openPlaceDetail('합정 스터디룸', true)">
+          <div class="pin-teardrop" style="background:var(--gray-800);"><span>📚</span></div>
+          <div class="pin-title">스터디룸 <span class="badge-affiliate">제휴</span></div>
+        </div>
+        <div class="map-pin-container" style="top:30%; left:75%;" onclick="openPlaceDetail('연남동 파티룸', false)">
+          <div class="pin-teardrop" style="background:var(--pink-500);"><span>🎈</span></div>
+          <div class="pin-title">파티룸</div>
         </div>
       </div>
+
+      <div style="font-size:14px; font-weight:700; margin-bottom:12px; flex-shrink: 0;">추천 및 제휴 장소 리스트</div>
+      <div style="flex: 1; overflow-y: auto;">
+        <div class="card" style="padding:12px; display:flex; align-items:center; gap:12px;" onclick="openPlaceDetail('홍대 공유주방 A호', true)">
+          <div style="width:40px;height:40px;background:var(--primary-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;">🍝</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:600;margin-bottom:2px;">홍대 공유주방 A호 <span class="badge-affiliate">제휴</span></div>
+            <div style="font-size:12px;color:var(--gray-500);">마포구 서교동 · 취사/식기 완비</div>
+          </div>
+        </div>
+        <div class="card" style="padding:12px; display:flex; align-items:center; gap:12px;" onclick="openPlaceDetail('합정 스터디룸', true)">
+          <div style="width:40px;height:40px;background:var(--gray-100);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;">📚</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:600;margin-bottom:2px;">합정 스터디룸 <span class="badge-affiliate">제휴</span></div>
+            <div style="font-size:12px;color:var(--gray-500);">마포구 합정동 · 빔프로젝터 제공</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="place-detail-modal" style="z-index: 250;">
+    <div class="modal-content" style="height: auto; max-height: 80%;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <i class="ti ti-arrow-left" style="font-size:24px; cursor:pointer;" onclick="closePlaceDetail()"></i>
+        <h2 style="font-size:18px; font-weight:700;">장소 상세 정보</h2>
+        <div style="width:24px;"></div> 
+      </div>
+      
+      <div style="width:100%; height:180px; background:var(--gray-200); border-radius:16px; margin-bottom:16px; display:flex; align-items:center; justify-content:center; color:var(--gray-500);">
+        <i class="ti ti-photo" style="font-size:40px;"></i>
+      </div>
+
+      <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); margin-bottom:8px;" id="place-detail-title">장소 이름</h3>
+      <div id="place-detail-badge" style="margin-bottom:16px;"></div>
+      
+      <div style="font-size:14px; color:var(--gray-700); line-height:1.6; margin-bottom:24px;">
+        <p style="margin-bottom:8px;"><i class="ti ti-map-pin" style="color:var(--gray-500); margin-right:4px;"></i> 서울시 마포구 (상세 주소 생략)</p>
+        <p style="margin-bottom:8px;" id="place-detail-perk"><i class="ti ti-star" style="color:var(--gray-500); margin-right:4px;"></i> 주방기구 및 기본 양념 무료 제공</p>
+        <p><i class="ti ti-users" style="color:var(--gray-500); margin-right:4px;"></i> 최대 수용 인원: 8명</p>
+      </div>
+
+      <button class="btn-full" style="margin-top:auto;" onclick="confirmLocationSelection()">이 장소로 선택하기</button>
     </div>
   </div>
 
@@ -728,17 +771,18 @@ let currentGoal = { title: "요리 실력 키우기", cat: "요리" };
 let zzimList = []; 
 let connectedPlatforms = []; 
 
+// Mock Data
 const allMeetings = [
-  { id: 1, cat: '요리', title: '이탈리안 파스타 만들기', loc: '홍대 공유주방', dist: 1.2, time: '토 오후 3시', max: 6, cur: 4, icon: '🍝', bg: '#FFF8F0', isHost: false },
-  { id: 2, cat: '요리', title: '베이킹 원데이 클래스', loc: '연남동 스튜디오', dist: 0.8, time: '일 오전 11시', max: 4, cur: 2, icon: '🥐', bg: '#FFF8F0', isHost: false },
-  { id: 3, cat: '요리', title: '자취생 밑반찬 만들기', loc: '망원동 키친', dist: 2.1, time: '금 오후 7시', max: 5, cur: 5, icon: '🍱', bg: '#FFF8F0', isHost: false },
-  { id: 4, cat: '운동', title: '북한산 새벽 등산 크루', loc: '북한산 입구', dist: 3.8, time: '일 오전 6시', max: 5, cur: 2, icon: '🥾', bg: '#F0FDF4', isHost: false },
-  { id: 5, cat: '운동', title: '연트럴파크 야간 러닝', loc: '연남동 파출소 앞', dist: 0.5, time: '화 오후 8시', max: 10, cur: 7, icon: '🏃', bg: '#F0FDF4', isHost: false },
-  { id: 6, cat: '운동', title: '주말 한강 라이딩', loc: '망원 한강공원', dist: 1.5, time: '토 오전 9시', max: 8, cur: 3, icon: '🚲', bg: '#F0FDF4', isHost: false },
-  { id: 7, cat: '독서', title: '조용한 북카페 독서모임', loc: '합정 북카페', dist: 1.1, time: '토 오후 1시', max: 6, cur: 4, icon: '📚', bg: '#F3F4F6', isHost: false },
-  { id: 8, cat: '독서', title: '베스트셀러 리뷰 스터디', loc: '신촌 스터디룸', dist: 1.7, time: '수 오후 7시', max: 8, cur: 6, icon: '📖', bg: '#F3F4F6', isHost: false },
-  { id: 9, cat: '사진', title: '필름카메라 골목 출사', loc: '연희동 골목', dist: 1.0, time: '일 오후 4시', max: 4, cur: 3, icon: '📸', bg: '#EAF1FF', isHost: false },
-  { id: 10, cat: '사진', title: '야경 사진 기초 클래스', loc: '상암 하늘공원', dist: 2.5, time: '금 오후 8시', max: 6, cur: 2, icon: '🌃', bg: '#EAF1FF', isHost: false }
+  { id: 1, cat: '요리', title: '이탈리안 파스타 만들기', loc: '홍대 공유주방 A호', dist: 1.2, time: '토 오후 3시', max: 6, cur: 4, icon: '🍝', bg: '#FFF8F0', isHost: false, isAffiliate: true },
+  { id: 2, cat: '요리', title: '베이킹 원데이 클래스', loc: '연남동 스튜디오', dist: 0.8, time: '일 오전 11시', max: 4, cur: 2, icon: '🥐', bg: '#FFF8F0', isHost: false, isAffiliate: false },
+  { id: 3, cat: '요리', title: '자취생 밑반찬 만들기', loc: '망원동 키친', dist: 2.1, time: '금 오후 7시', max: 5, cur: 5, icon: '🍱', bg: '#FFF8F0', isHost: false, isAffiliate: false },
+  { id: 4, cat: '운동', title: '북한산 새벽 등산 크루', loc: '북한산 입구', dist: 3.8, time: '일 오전 6시', max: 5, cur: 2, icon: '🥾', bg: '#F0FDF4', isHost: false, isAffiliate: false },
+  { id: 5, cat: '운동', title: '연트럴파크 야간 러닝', loc: '연남동 파출소 앞', dist: 0.5, time: '화 오후 8시', max: 10, cur: 7, icon: '🏃', bg: '#F0FDF4', isHost: false, isAffiliate: false },
+  { id: 6, cat: '운동', title: '주말 한강 라이딩', loc: '망원 한강공원', dist: 1.5, time: '토 오전 9시', max: 8, cur: 3, icon: '🚲', bg: '#F0FDF4', isHost: false, isAffiliate: false },
+  { id: 7, cat: '독서', title: '조용한 북카페 독서모임', loc: '합정 스터디룸', dist: 1.1, time: '토 오후 1시', max: 6, cur: 4, icon: '📚', bg: '#F3F4F6', isHost: false, isAffiliate: true },
+  { id: 8, cat: '독서', title: '베스트셀러 리뷰 스터디', loc: '신촌 스터디룸', dist: 1.7, time: '수 오후 7시', max: 8, cur: 6, icon: '📖', bg: '#F3F4F6', isHost: false, isAffiliate: false },
+  { id: 9, cat: '사진', title: '필름카메라 골목 출사', loc: '연희동 골목', dist: 1.0, time: '일 오후 4시', max: 4, cur: 3, icon: '📸', bg: '#EAF1FF', isHost: false, isAffiliate: false },
+  { id: 10, cat: '사진', title: '야경 사진 기초 클래스', loc: '상암 하늘공원', dist: 2.5, time: '금 오후 8시', max: 6, cur: 2, icon: '🌃', bg: '#EAF1FF', isHost: false, isAffiliate: false }
 ];
 
 function navigate(to) {
@@ -760,26 +804,21 @@ function goBack() {
 }
 
 function startAnalysis(type) {
-  if (!connectedPlatforms.includes(type)) {
-    connectedPlatforms.push(type);
-  }
+  if (!connectedPlatforms.includes(type)) connectedPlatforms.push(type);
 
   const resultDiv = document.getElementById('analysis-result');
   let html = '';
 
   const ytHtml = `
     <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
-      <i class="ti ti-brand-youtube" style="font-size:24px; color:var(--red-500);"></i>
-      <span style="font-size:15px; font-weight:600;">YouTube 기반 분석</span>
+      <i class="ti ti-brand-youtube" style="font-size:24px; color:var(--red-500);"></i><span style="font-size:15px; font-weight:600;">YouTube 기반 분석</span>
     </div>
     <div style="margin-bottom:12px;"><div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;"><span style="color:var(--gray-800); font-weight:500;">요리 / 레시피</span><span style="color:var(--primary); font-weight:600;">45%</span></div><div class="pbar"><div class="pfill" style="width:45%;"></div></div></div>
     <div style="margin-bottom:12px;"><div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;"><span style="color:var(--gray-800); font-weight:500;">아웃도어 캠핑</span><span style="color:var(--primary); font-weight:600;">30%</span></div><div class="pbar"><div class="pfill" style="width:30%;"></div></div></div>
   `;
-
   const igHtml = `
     <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
-      <i class="ti ti-brand-instagram" style="font-size:24px; color:var(--pink-500);"></i>
-      <span style="font-size:15px; font-weight:600;">Instagram 기반 분석</span>
+      <i class="ti ti-brand-instagram" style="font-size:24px; color:var(--pink-500);"></i><span style="font-size:15px; font-weight:600;">Instagram 기반 분석</span>
     </div>
     <div style="margin-bottom:12px;"><div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;"><span style="color:var(--gray-800); font-weight:500;">사진 / 핫플 투어</span><span style="color:var(--primary); font-weight:600;">52%</span></div><div class="pbar"><div class="pfill" style="width:52%;"></div></div></div>
     <div style="margin-bottom:12px;"><div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;"><span style="color:var(--gray-800); font-weight:500;">전시 / 미술</span><span style="color:var(--primary); font-weight:600;">28%</span></div><div class="pbar"><div class="pfill" style="width:28%;"></div></div></div>
@@ -788,13 +827,9 @@ function startAnalysis(type) {
   const ytBtn = `<div class="card" style="display:flex; align-items:center; gap:12px; margin-top:16px; padding:12px;" onclick="startAnalysis('youtube')"><div style="width:36px;height:36px;border-radius:10px;background:#FEE2E2;color:var(--red-500);display:flex;align-items:center;justify-content:center;"><i class="ti ti-brand-youtube" style="font-size:20px;"></i></div><div style="font-size:14px;font-weight:600;">YouTube 추가 연결</div><i class="ti ti-plus" style="margin-left:auto;color:var(--gray-400);"></i></div>`;
   const igBtn = `<div class="card" style="display:flex; align-items:center; gap:12px; margin-top:16px; padding:12px;" onclick="startAnalysis('instagram')"><div style="width:36px;height:36px;border-radius:10px;background:#FCE7F3;color:var(--pink-500);display:flex;align-items:center;justify-content:center;"><i class="ti ti-brand-instagram" style="font-size:20px;"></i></div><div style="font-size:14px;font-weight:600;">Instagram 추가 연결</div><i class="ti ti-plus" style="margin-left:auto;color:var(--gray-400);"></i></div>`;
 
-  if (connectedPlatforms.length === 2) {
-    html = ytHtml + '<div style="height:1px; background:var(--gray-200); margin:24px 0;"></div>' + igHtml;
-  } else if (connectedPlatforms.includes('youtube')) {
-    html = ytHtml + igBtn;
-  } else if (connectedPlatforms.includes('instagram')) {
-    html = igHtml + ytBtn;
-  }
+  if (connectedPlatforms.length === 2) html = ytHtml + '<div style="height:1px; background:var(--gray-200); margin:24px 0;"></div>' + igHtml;
+  else if (connectedPlatforms.includes('youtube')) html = ytHtml + igBtn;
+  else if (connectedPlatforms.includes('instagram')) html = igHtml + ytBtn;
 
   resultDiv.innerHTML = html;
   navigate('s1');
@@ -804,8 +839,7 @@ function selectGoal(cat, title, el) {
   document.getElementById('customGoal').value = ''; 
   currentGoal.cat = cat;
   currentGoal.title = title;
-  const allCards = document.querySelectorAll('.goal-card');
-  allCards.forEach(card => {
+  document.querySelectorAll('.goal-card').forEach(card => {
     card.style.borderColor = 'var(--gray-200)'; card.style.background = '#fff';
     card.querySelector('.goal-icon').className = 'ti ti-circle goal-icon'; card.querySelector('.goal-icon').style.color = 'var(--gray-300)';
   });
@@ -814,8 +848,7 @@ function selectGoal(cat, title, el) {
 }
 
 function clearGoalSelection() {
-  const allCards = document.querySelectorAll('.goal-card');
-  allCards.forEach(card => {
+  document.querySelectorAll('.goal-card').forEach(card => {
     card.style.borderColor = 'var(--gray-200)'; card.style.background = '#fff';
     card.querySelector('.goal-icon').className = 'ti ti-circle goal-icon'; card.querySelector('.goal-icon').style.color = 'var(--gray-300)';
   });
@@ -827,9 +860,8 @@ function submitGoal() {
     currentGoal.title = custom;
     currentGoal.cat = '기타';
     currentGoal.subs = [
-      { title: `"${custom}" 기초 알아보기`, desc: "관련 정보 탐색 및 준비", done: false },
-      { title: "관련 오프라인 모임 2회 참석", desc: "비슷한 관심사의 사람들과 교류", done: false },
-      { title: "첫 번째 실행 기록 남기기", desc: "사진이나 글로 나의 과정 기록", done: false }
+      { title: `기초 알아보기`, desc: "관련 정보 탐색 및 준비", done: false },
+      { title: "모임 참석", desc: "사람들과 교류", done: false }
     ];
   } else {
     if(currentGoal.title === "꾸준한 운동 습관") {
@@ -882,10 +914,8 @@ function toggleSubGoal(index) {
 function updateMainProgress() {
   let doneCount = currentGoal.subs.filter(s => s.done).length;
   let pct = Math.round((doneCount / currentGoal.subs.length) * 100) || 0;
-  
   document.getElementById('s4-progress-pct').innerText = `${pct}%`;
   document.getElementById('s10-progress-pct').innerText = `${pct}%`;
-  
   setTimeout(() => {
     if(document.getElementById('s4-progress-bar')) document.getElementById('s4-progress-bar').style.width = `${pct}%`;
     if(document.getElementById('s10-progress-bar')) document.getElementById('s10-progress-bar').style.width = `${pct}%`;
@@ -902,6 +932,7 @@ function setFilter(filter, el) {
 function createCardHTML(m, tagText) {
   const isZzim = zzimList.includes(m.id);
   const heartIcon = isZzim ? `<i class="ti ti-heart-filled" style="color:var(--red-500);"></i>` : `<i class="ti ti-heart"></i>`;
+  const badgeHTML = m.isAffiliate ? `<span class="badge-affiliate">제휴</span>` : '';
   const tag = tagText ? `<div style="position:absolute; top:12px; right:12px; background:var(--primary); color:#fff; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:600;">${tagText}</div>` : '';
   
   return `
@@ -912,7 +943,7 @@ function createCardHTML(m, tagText) {
         ${tag}
       </div>
       <div style="padding:16px;">
-        <h3 style="font-size:16px; font-weight:600; color:var(--gray-900); margin-bottom:8px;">${m.title}</h3>
+        <h3 style="font-size:16px; font-weight:600; color:var(--gray-900); margin-bottom:8px;">${m.title} ${badgeHTML}</h3>
         <div style="display:flex; gap:12px; font-size:13px; color:var(--gray-500); margin-bottom:16px;">
           <span><i class="ti ti-users"></i> ${m.cur}/${m.max}명</span>
           <span><i class="ti ti-calendar-time"></i> ${m.time}</span>
@@ -929,21 +960,17 @@ function createCardHTML(m, tagText) {
 function renderHomeList(filter) {
   const container = document.getElementById('home-meeting-list');
   let filtered = [];
-  
   if(filter === '추천') {
     if(currentGoal.cat === '기타') {
       filtered = [...allMeetings].sort(() => 0.5 - Math.random()).slice(0, 4);
-      container.innerHTML = filtered.map(m => createCardHTML(m, 'AI 랜덤 추천')).join('');
-      return;
+      container.innerHTML = filtered.map(m => createCardHTML(m, 'AI 랜덤 추천')).join(''); return;
     } else {
       filtered = allMeetings.filter(m => m.cat === currentGoal.cat);
-      container.innerHTML = filtered.map(m => createCardHTML(m, '목표 추천')).join('');
-      return;
+      container.innerHTML = filtered.map(m => createCardHTML(m, '목표 추천')).join(''); return;
     }
   } else {
     filtered = allMeetings.filter(m => m.cat === filter);
   }
-  
   if(filtered.length === 0) container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--gray-400);">해당 카테고리에 모임이 없습니다.</div>`;
   else container.innerHTML = filtered.map(m => createCardHTML(m, '')).join('');
 }
@@ -977,7 +1004,6 @@ function updateZzimListInProfile() {
           <div style="font-size:14px; font-weight:600;">${m.title}</div>
           <div style="font-size:12px; color:var(--gray-500); margin-top:2px;">${m.time} · ${m.loc}</div>
         </div>
-        <i class="ti ti-heart-filled" style="color:var(--red-500); font-size:20px;" onclick="toggleZzim(event, ${m.id}, this)"></i>
       </div>
     `;
   }).join('');
@@ -987,12 +1013,13 @@ function updateZzimListInProfile() {
 function openMapSheet(id, e) {
   e.stopPropagation();
   const m = allMeetings.find(x => x.id === id);
+  const badgeHTML = m.isAffiliate ? `<span class="badge-affiliate">제휴</span>` : '';
   const sheet = document.getElementById('map-sheet-content');
   sheet.innerHTML = `
     <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
       <div style="font-size:24px; background:${m.bg}; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center;">${m.icon}</div>
       <div style="flex:1;">
-        <div style="font-size:15px; font-weight:600; color:var(--gray-900);">${m.title}</div>
+        <div style="font-size:15px; font-weight:600; color:var(--gray-900);">${m.title} ${badgeHTML}</div>
         <div style="font-size:12px; color:var(--gray-500); margin-top:2px;">${m.dist}km · ${m.time} · ${m.cur}/${m.max}명</div>
       </div>
     </div>
@@ -1047,10 +1074,29 @@ function navToHost(type) {
 
 function openLocationModal() { document.getElementById('location-modal').style.display = 'flex'; }
 function closeLocationModal() { document.getElementById('location-modal').style.display = 'none'; }
-function selectLocation(name) {
-  document.getElementById('selected-loc-text').innerText = name;
+
+function openPlaceDetail(name, isAffiliate) {
+  selectedPlaceNameForForm = name;
+  document.getElementById('place-detail-title').innerText = name;
+  
+  const badgeHTML = isAffiliate ? `<span class="badge-affiliate" style="font-size:12px; padding:4px 8px;">제휴 공간</span>` : '';
+  document.getElementById('place-detail-badge').innerHTML = badgeHTML;
+  
+  const perkHTML = isAffiliate 
+    ? `<i class="ti ti-star" style="color:var(--primary); margin-right:4px;"></i> <span style="color:var(--primary); font-weight:700;">제휴 혜택: 공간 대여료 무료 지원</span>` 
+    : `<i class="ti ti-info-circle" style="color:var(--gray-500); margin-right:4px;"></i> 일반 장소 (개별 예약 필요)`;
+  document.getElementById('place-detail-perk').innerHTML = perkHTML;
+
+  document.getElementById('place-detail-modal').style.display = 'flex';
+}
+function closePlaceDetail() { document.getElementById('place-detail-modal').style.display = 'none'; }
+
+function confirmLocationSelection() {
+  document.getElementById('selected-loc-text').innerText = selectedPlaceNameForForm;
   document.getElementById('selected-loc-text').style.color = 'var(--gray-900)';
   document.getElementById('selected-loc-text').style.fontWeight = '600';
+  
+  closePlaceDetail();
   closeLocationModal();
 }
 
@@ -1061,7 +1107,7 @@ function submitHost() {
   
   const newId = Date.now();
   const newMeeting = {
-    id: newId, cat: catInput, title: titleInput, loc: locInput, dist: 0.0, time: '오늘 신규 개설', max: 6, cur: 1, icon: '✨', bg: '#EAF1FF', isHost: true
+    id: newId, cat: catInput, title: titleInput, loc: locInput, dist: 0.0, time: '오늘 신규 개설', max: 6, cur: 1, icon: '✨', bg: '#EAF1FF', isHost: true, isAffiliate: false
   };
   
   allMeetings.unshift(newMeeting); 
